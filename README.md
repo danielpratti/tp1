@@ -4,7 +4,7 @@ Sistema em C para gerenciamento de partidas e classificação de um campeonato d
 
 ---
 
-## Como compilar e executar
+## Compilação e Execução
 
 Requisitos: GCC 11+, Linux (Ubuntu 22.04 recomendado) ou WSL.
 
