@@ -63,7 +63,7 @@ Gerencia o vetor estático de partidas. Ao carregar o `partidas.csv`, atualiza a
 | 6 | Imprimir tabela de classificação |
 | Q | Encerrar o sistema |
 
-As opções 3, 4 e 5 estão desabilitas.
+As opções 3, 4 e 5 estão desabilitadas.
 
 ---
 
