@@ -3,7 +3,7 @@
 #include <string.h>
 #include <strings.h>
 
-/* Inicializa BD de partidas com quantidade zero */
+//Inicializa BD de partidas com quantidade zero
 void bdpartidas_init(BDPartidas *bd) {
     bd->quantidade = 0;
 }
@@ -20,7 +20,7 @@ int bdpartidas_carregar(BDPartidas *bd, BDTimes *bdt, const char *arquivo) {
     }
 
     char linha[256];
-    /* Pula cabeçalho */
+    //Pula cabeçalho
     fgets(linha, sizeof(linha), f);
 
     while (fgets(linha, sizeof(linha), f) && bd->quantidade < MAX_PARTIDAS) {
@@ -29,7 +29,7 @@ int bdpartidas_carregar(BDPartidas *bd, BDTimes *bdt, const char *arquivo) {
             bd->partidas[bd->quantidade] = partida_criar(id, t1, t2, g1, g2);
             bd->quantidade++;
 
-            /* Atualiza estatísticas dos times envolvidos */
+            //Atualiza estatísticas dos times envolvidos
             Time *time1 = bdtimes_buscar_por_id(bdt, t1);
             Time *time2 = bdtimes_buscar_por_id(bdt, t2);
 
@@ -91,11 +91,7 @@ void bdpartidas_consultar(BDPartidas *bd, BDTimes *bdt,
         if (exibir) {
             Time *t1 = bdtimes_buscar_por_id(bdt, p->id_time1);
             Time *t2 = bdtimes_buscar_por_id(bdt, p->id_time2);
-            printf("%-4d %-12s %d x %d %-12s\n",
-                   p->id,
-                   t1 ? t1->nome : "?",
-                   p->gols_time1, p->gols_time2,
-                   t2 ? t2->nome : "?");
+            printf("%-4d %-12s %d x %d %-12s\n", p->id, t1 ? t1->nome : "?", p->gols_time1, p->gols_time2, t2 ? t2->nome : "?");
             encontrados++;
         }
     }
