@@ -6,13 +6,13 @@
 
 #define MAX_PARTIDAS 500
 
-/* Estrutura que gerencia a coleção de partidas */
+//Estrutura que gerencia a coleção de partidas
 typedef struct {
     Partida partidas[MAX_PARTIDAS];
     int quantidade;
 } BDPartidas;
 
-/* Inicializa o banco de dados de partidas (vazio) */
+//Inicializa o banco de dados de partidas (vazio)
 void bdpartidas_init(BDPartidas *bd);
 
 /*
