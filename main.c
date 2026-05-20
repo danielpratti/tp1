@@ -66,7 +66,7 @@ int main(void) {
     bdtimes_init(&bdt);
     bdpartidas_init(&bdp);
 
-    /* Carrega os arquivos CSV */
+    //Carrega os arquivos CSV
     if (bdtimes_carregar(&bdt, "times.csv") != 0) {
         fprintf(stderr, "Erro fatal: nao foi possivel carregar times.csv\n");
         return 1;
