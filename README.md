@@ -73,3 +73,6 @@ As opções 3, 4 e 5 estão desabilitadas.
 - **Estatísticas calculadas na carga**: ao ler cada partida, os campos V/E/D/GM/GS dos times são atualizados imediatamente, evitando percorrer o vetor de partidas a cada consulta.
 - **Busca por prefixo case-insensitive** usando `strncasecmp` (POSIX), disponível no GCC/Linux.
 - **Separação clara de responsabilidades**: cada TAD possui seu próprio par `.h`/`.c` sem dependências cruzadas desnecessárias.
+
+
+  Daniel Pratti e Rafael Pratti™
