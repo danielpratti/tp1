@@ -3,7 +3,7 @@
 #include <string.h>
 #include <strings.h>
 
-/* Inicializa o BD de times com quantidade zero */
+//Inicializa o BD de times com quantidade zero
 void bdtimes_init(BDTimes *bd) {
     bd->quantidade = 0;
 }
@@ -21,14 +21,14 @@ int bdtimes_carregar(BDTimes *bd, const char *arquivo) {
     }
 
     char linha[256];
-    /* Pula o cabeçalho */
+    //Pula o cabeçalho
     fgets(linha, sizeof(linha), f);
 
     while (fgets(linha, sizeof(linha), f) && bd->quantidade < MAX_TIMES) {
         int id;
         char nome[MAX_NOME];
-        /* Lê id e nome separados por vírgula */
-        /* Formato real: ID,Time — campo se chama "Time" no CSV */
+        //Lê id e nome separados por vírgula
+        //Formato real: ID,Time — campo se chama "Time" no CSV
         if (sscanf(linha, "%d,%49[^\n\r]", &id, nome) == 2) {
             bd->times[bd->quantidade] = time_criar(id, nome);
             bd->quantidade++;
@@ -39,7 +39,7 @@ int bdtimes_carregar(BDTimes *bd, const char *arquivo) {
     return 0;
 }
 
-/* Busca linear por ID */
+//Busca linear por ID
 Time *bdtimes_buscar_por_id(BDTimes *bd, int id) {
     for (int i = 0; i < bd->quantidade; i++) {
         if (bd->times[i].id == id)
@@ -65,7 +65,7 @@ int bdtimes_buscar_por_prefixo(BDTimes *bd, const char *prefixo,
     return encontrados;
 }
 
-/* Imprime tabela completa ordenada por ID (já estão em ordem de inserção) */
+//Imprime tabela completa ordenada por ID (Em ordem de inserção)
 void bdtimes_imprimir_tabela(BDTimes *bd) {
     printf("\nImprimindo classificacao...\n\n");
     time_imprimir_cabecalho();
