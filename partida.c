@@ -1,8 +1,7 @@
 #include "partida.h"
 
-/* Cria uma partida preenchendo todos os campos */
-Partida partida_criar(int id, int id_time1, int id_time2,
-                      int gols_time1, int gols_time2) {
+//Cria uma partida preenchendo todos os campos
+Partida partida_criar(int id, int id_time1, int id_time2, int gols_time1, int gols_time2) {
     Partida p;
     p.id = id;
     p.id_time1 = id_time1;
