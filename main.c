@@ -96,14 +96,12 @@ int main(void) {
             menu_consultar_time(&bdt);
         } else if (strcmp(opcao, "2") == 0) {
             menu_consultar_partidas(&bdp, &bdt);
-        } else if (strcmp(opcao, "3") == 0 ||
-                   strcmp(opcao, "4") == 0 ||
-                   strcmp(opcao, "5") == 0) {
+        } else if (strcmp(opcao, "3") == 0 || strcmp(opcao, "4") == 0 || strcmp(opcao, "5") == 0) {
             printf("\nFuncionalidade nao implementada nesta versao.\n\n");
         } else if (strcmp(opcao, "6") == 0) {
             bdtimes_imprimir_tabela(&bdt);
         } else if (strcmp(opcao, "Q") == 0 || strcmp(opcao, "q") == 0) {
-            printf("\nEncerrando o sistema. Ate logo!\n");
+            printf("\nEncerrando o sistema. :D\n");
         } else {
             printf("\nOpcao invalida. Tente novamente.\n\n");
         }
