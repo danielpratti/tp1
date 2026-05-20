@@ -6,7 +6,7 @@ Sistema em C para gerenciamento de partidas e classificação de um campeonato d
 
 ## Compilação e Execução
 
-Requisitos: GCC 11+, Linux (Ubuntu 22.04 recomendado) ou WSL.
+Requisitos: GCC 11+, Linux (Ubuntu 22.04 recomendado)/WSL.
 
 ```bash
 make          # compila o projeto
@@ -26,14 +26,14 @@ make clean
 
 ```
 .
-├── main.c          # Programa principal e menu interativo
-├── time.h / time.c           # TAD Time
-├── bdtimes.h / bdtimes.c     # TAD BDTimes
-├── partida.h / partida.c     # TAD Partida
-├── bdpartidas.h / bdpartidas.c # TAD BDPartidas
-├── Makefile
-├── times.csv       # Banco de dados dos times
-└── partidas.csv    # Banco de dados das partidas
+* main.c          # Programa principal e menu interativo
+* time.h / time.c           # TAD Time
+* bdtimes.h / bdtimes.c     # TAD BDTimes
+* partida.h / partida.c     # TAD Partida
+* bdpartidas.h / bdpartidas.c # TAD BDPartidas
+* Makefile
+* times.csv       # Banco de dados dos times
+* partidas.csv    # Banco de dados das partidas
 ```
 
 ---
@@ -59,17 +59,17 @@ Gerencia o vetor estático de partidas. Ao carregar o `partidas.csv`, atualiza a
 | Opção | Descrição |
 |-------|-----------|
 | 1 | Consultar time por nome ou prefixo |
-| 2 | Consultar partidas por time (mandante, visitante ou ambos) |
-| 6 | Imprimir tabela de classificação completa |
+| 2 | Consultar partidas por time|
+| 6 | Imprimir tabela de classificação |
 | Q | Encerrar o sistema |
 
-As opções 3, 4 e 5 estão desabilitadas e serão implementadas na Parte II.
+As opções 3, 4 e 5 estão desabilitas.
 
 ---
 
 ## Principais decisões de implementação
 
-- **Vetores estáticos** para `BDTimes` (MAX 100) e `BDPartidas` (MAX 500), conforme orientado pelo enunciado.
+- **Vetores estáticos** para `BDTimes` (MAX 100) e `BDPartidas` (MAX 500).
 - **Estatísticas calculadas na carga**: ao ler cada partida, os campos V/E/D/GM/GS dos times são atualizados imediatamente, evitando percorrer o vetor de partidas a cada consulta.
 - **Busca por prefixo case-insensitive** usando `strncasecmp` (POSIX), disponível no GCC/Linux.
 - **Separação clara de responsabilidades**: cada TAD possui seu próprio par `.h`/`.c` sem dependências cruzadas desnecessárias.
