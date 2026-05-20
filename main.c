@@ -3,13 +3,13 @@
 #include "bdtimes.h"
 #include "bdpartidas.h"
 
-/* Limpa o buffer do stdin após leitura */
+//Limpa o buffer do stdin após leitura
 static void limpar_buffer(void) {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-/* ── Funcionalidade 1: Consultar time ── */
+//Funcionalidade 1: Consultar time
 static void menu_consultar_time(BDTimes *bdt) {
     char prefixo[MAX_NOME];
     printf("\nDigite o nome ou prefixo do time: ");
@@ -31,7 +31,7 @@ static void menu_consultar_time(BDTimes *bdt) {
     printf("\n");
 }
 
-/* ── Funcionalidade 2: Consultar partidas ── */
+//Funcionalidade 2: Consultar partidas
 static void menu_consultar_partidas(BDPartidas *bdp, BDTimes *bdt) {
     printf("\nEscolha o modo de consulta:\n");
     printf("  1 - Por time mandante\n");
@@ -58,7 +58,7 @@ static void menu_consultar_partidas(BDPartidas *bdp, BDTimes *bdt) {
     bdpartidas_consultar(bdp, bdt, prefixo, modo);
 }
 
-/* ── Menu principal ── */
+//Menu principal
 int main(void) {
     BDTimes  bdt;
     BDPartidas bdp;
